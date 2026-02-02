@@ -2,7 +2,7 @@
 
 A high-fidelity, privacy-preserving bluffing game powered by **Fhenix coFHE**. This project demonstrates the power of Fully Homomorphic Encryption (FHE) on-chain, allowing players to make secret moves and bluff without revealing their actual state to the public or the network until the final resolution.
 
-![Carrot Game](frontend/public/assets/player_a.png)
+![Carrot Game](frontend/public/assets/carrot.png)
 
 ## 🎮 The Game Concept
 Based on the classic "Carrot in a Box" game, this version adds a layer of cryptographic security.
