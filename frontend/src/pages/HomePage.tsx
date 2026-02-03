@@ -354,42 +354,14 @@ function StatBox({ label, value }: { label: string, value: string }) {
 
 function BubbleDivider() {
     return (
-        <div className="relative h-20 w-full overflow-hidden">
-            {/* Wavy Border SVG */}
+        <div className="relative h-16 w-full -mb-px overflow-hidden">
             <svg
                 viewBox="0 0 1440 120"
-                className="absolute bottom-0 left-0 w-full h-[60px] fill-surface-1"
+                className="absolute bottom-0 left-0 w-full h-full fill-surface-1"
                 preserveAspectRatio="none"
             >
-                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" />
+                <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" />
             </svg>
-
-            {/* Bubble Stream */}
-            <div className="absolute inset-0 z-0">
-                {[...Array(15)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{
-                            x: Math.random() * 100 + "%",
-                            y: 100,
-                            opacity: 0,
-                            scale: Math.random() * 0.5 + 0.5
-                        }}
-                        animate={{
-                            y: -20,
-                            opacity: [0, 0.4, 0],
-                            x: (Math.random() * 100 - 50) + "%"
-                        }}
-                        transition={{
-                            duration: Math.random() * 3 + 2,
-                            repeat: Infinity,
-                            delay: Math.random() * 5,
-                            ease: "easeOut"
-                        }}
-                        className="absolute w-2 h-2 rounded-full bg-primary/20 blur-[1px]"
-                    />
-                ))}
-            </div>
         </div>
     );
 }
