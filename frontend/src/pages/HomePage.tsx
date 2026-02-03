@@ -216,43 +216,17 @@ function HomePage() {
                 </div>
             </section>
 
-            {/* Tech Specs Section */}
-            <section className="py-4 md:py-6 bg-surface-1 border-t border-white/5">
-                <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
-                    <div className="w-full lg:w-1/2">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Cutting-Edge Web3 Stack</h2>
-                        <p className="text-neutral-tan mb-8 leading-relaxed text-sm md:text-base">
-                            Carrot in a Box isn't just a game; it's a demonstration of state-of-the-art cryptography.
-                            By leveraging **Fhenix's coFHE**, we enable gameplay possibilities that were previously impossible
-                            on transparent blockchains.
-                        </p>
-                        <div className="flex flex-wrap gap-2 md:gap-3">
-                            <TechPill label="Fhenix FHEVM" />
-                            <TechPill label="coFHE Oracle" />
-                            <TechPill label="Encrypted State" />
-                            <TechPill label="Zero Leakage" />
-                        </div>
-                    </div>
-                    <div className="w-full lg:w-1/2 grid grid-cols-2 gap-3 md:gap-4">
-                        <StatBox label="Network" value="Sepolia" />
-                        <StatBox label="Protocol" value="Fhenix coFHE" />
-                        <StatBox label="Security" value="Homomorphic" />
-                        <StatBox label="Speed" value="Instant" />
-                    </div>
-                </div>
-            </section>
-
-            {/* Final CTA - Floating Luxury Card */}
-            <section className="py-4 md:py-8 relative">
-                <div className="max-w-4xl mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="glass-card p-8 md:p-16 rounded-[32px] md:rounded-[48px] border border-primary/20 text-center relative overflow-hidden bg-surface-2"
-                    >
-
-                        <div className="relative z-10 space-y-6 md:space-y-8">
+            {/* Final CTA & Tech Specs Block */}
+            <section className="bg-surface-1 border-t border-white/5">
+                {/* Final CTA */}
+                <div className="py-12 md:py-16">
+                    <div className="max-w-4xl mx-auto px-4 text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="space-y-6 md:space-y-8"
+                        >
                             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">Ready to Bluff?</h2>
                             <p className="text-base md:text-xl text-neutral-tan max-w-lg mx-auto leading-relaxed">
                                 Join the underground of on-chain psychology. Your CARROTS are waiting.
@@ -265,8 +239,34 @@ function HomePage() {
                                 <Icon name="casino" size="md" className="hidden md:block" />
                                 <span className="uppercase tracking-wider font-black">Start Your Journey</span>
                             </Link>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Tech Specs Section */}
+                <div className="py-8 md:py-12 border-t border-white/5">
+                    <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+                        <div className="w-full lg:w-1/2">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Cutting-Edge Web3 Stack</h2>
+                            <p className="text-neutral-tan mb-8 leading-relaxed text-sm md:text-base">
+                                Carrot in a Box isn't just a game; it's a demonstration of state-of-the-art cryptography.
+                                By leveraging **Fhenix's coFHE**, we enable gameplay possibilities that were previously impossible
+                                on transparent blockchains.
+                            </p>
+                            <div className="flex flex-wrap gap-2 md:gap-3">
+                                <TechPill label="Fhenix FHEVM" />
+                                <TechPill label="coFHE Oracle" />
+                                <TechPill label="Encrypted State" />
+                                <TechPill label="Zero Leakage" />
+                            </div>
                         </div>
-                    </motion.div>
+                        <div className="w-full lg:w-1/2 grid grid-cols-2 gap-3 md:gap-4">
+                            <StatBox label="Network" value="Sepolia" />
+                            <StatBox label="Protocol" value="Fhenix coFHE" />
+                            <StatBox label="Security" value="Homomorphic" />
+                            <StatBox label="Speed" value="Instant" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
