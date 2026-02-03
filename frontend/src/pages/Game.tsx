@@ -28,6 +28,14 @@ const GameStateIdx = {
 const DECISION_TIMEOUT_MS = 60 * 60 * 1000; // 1 hour in ms
 
 function Game() {
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <GameContent />
+        </div>
+    );
+}
+
+function GameContent() {
     const { gameId } = useParams();
     const navigate = useNavigate();
     const { address, isConnected } = useAccount();

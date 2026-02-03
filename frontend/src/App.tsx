@@ -13,9 +13,9 @@ import CreateGame from './pages/CreateGame';
 function App() {
     return (
         <ToastProvider>
-            <div className="min-h-screen bg-background-dark">
+            <div className="min-h-screen bg-surface-0 flex flex-col">
                 <Navbar />
-                <main className="container mx-auto px-4 py-6">
+                <main className="flex-1 flex flex-col">
                     <AnimatePresence mode="wait">
                         <Routes>
                             <Route path="/" element={<HomePage />} />

@@ -24,6 +24,14 @@ const GameStateColors: Record<number, string> = {
 };
 
 function Lobby() {
+    return (
+        <div className="container mx-auto px-4 py-8 flex flex-col gap-8">
+            <LobbyContent />
+        </div>
+    );
+}
+
+function LobbyContent() {
     const navigate = useNavigate();
     const { isConnected, address } = useAccount();
     const [searchQuery, setSearchQuery] = useState('');

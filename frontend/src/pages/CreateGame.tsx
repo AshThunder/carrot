@@ -11,6 +11,14 @@ import { encryptEbool, encryptEuint64, pushLog, subscribeToCofheLogs } from '../
 import { generateGameKeys, splitKey, publicKeyToHex } from '../lib/chat';
 
 function CreateGame() {
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <CreateGameContent />
+        </div>
+    );
+}
+
+function CreateGameContent() {
     const navigate = useNavigate();
     const { isConnected, address } = useAccount();
     const publicClient = usePublicClient();

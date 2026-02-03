@@ -7,6 +7,14 @@ import { CARROT_GAME_ADDRESS, CARROT_GAME_ABI } from '../lib/abis';
 import { useMemo } from 'react';
 
 function GameResult() {
+    return (
+        <div className="container mx-auto px-4 py-12">
+            <GameResultContent />
+        </div>
+    );
+}
+
+function GameResultContent() {
     const { gameId } = useParams();
     const { address } = useAccount();
 

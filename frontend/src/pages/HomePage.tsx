@@ -19,8 +19,6 @@ function HomePage() {
 
     return (
         <div ref={containerRef} className="min-h-screen bg-mesh-luxe flex flex-col relative">
-            {/* Simple Background Layer */}
-            <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 bg-surface-0" />
 
             {/* Hero Section */}
             <section className="flex flex-col items-center justify-center text-center relative z-10 px-4 pt-4 md:pt-6 pb-8 md:pb-12">
@@ -273,7 +271,7 @@ function HomePage() {
             </section>
 
             {/* Footer */}
-            <footer className="py-8 md:py-12 border-t border-white/5 bg-black/20">
+            <footer className="mt-auto py-8 md:py-12 border-t border-white/5 bg-black/20 relative z-10">
                 <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 text-center md:text-left">
                     <div className="flex items-center gap-3">
                         <img src="/assets/carrot.png" alt="Carrot" className="w-8 h-8" />
