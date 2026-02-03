@@ -217,57 +217,59 @@ function HomePage() {
             </section>
 
             {/* Final CTA & Tech Specs Block */}
-            <section className="bg-surface-1 border-t border-white/5">
-                {/* Final CTA */}
-                <div className="py-12 md:py-16">
-                    <div className="max-w-4xl mx-auto px-4 text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="space-y-6 md:space-y-8"
-                        >
-                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">Ready to Bluff?</h2>
-                            <p className="text-base md:text-xl text-neutral-tan max-w-lg mx-auto leading-relaxed">
-                                Join the underground of on-chain psychology. Your CARROTS are waiting.
-                            </p>
-                            <Link
-                                to="/lobby"
-                                className="w-full sm:w-auto btn-primary text-sm md:text-xl py-3.5 md:py-6 px-8 md:px-16 inline-flex items-center justify-center gap-3 md:gap-4 group"
+            <section className="relative">
+                <BubbleDivider />
+                <div className="bg-surface-1">
+                    {/* Final CTA */}
+                    <div className="py-12 md:py-16">
+                        <div className="max-w-4xl mx-auto px-4 text-center">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="space-y-6 md:space-y-8"
                             >
-                                <Icon name="casino" size="sm" className="md:hidden" />
-                                <Icon name="casino" size="md" className="hidden md:block" />
-                                <span className="uppercase tracking-wider font-black">Start Your Journey</span>
-                            </Link>
-                        </motion.div>
+                                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">Ready to Bluff?</h2>
+                                <p className="text-base md:text-xl text-neutral-tan max-w-lg mx-auto leading-relaxed">
+                                    Join the underground of on-chain psychology. Your CARROTS are waiting.
+                                </p>
+                                <Link
+                                    to="/lobby"
+                                    className="w-full sm:w-auto btn-primary text-sm md:text-xl py-3.5 md:py-6 px-8 md:px-16 inline-flex items-center justify-center gap-3 md:gap-4 group"
+                                >
+                                    <Icon name="casino" size="sm" className="md:hidden" />
+                                    <Icon name="casino" size="md" className="hidden md:block" />
+                                    <span className="uppercase tracking-wider font-black">Start Your Journey</span>
+                                </Link>
+                            </motion.div>
+                        </div>
                     </div>
-                </div>
 
-                {/* Tech Specs Section */}
-                <div className="py-8 md:py-12 border-t border-white/5">
-                    <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
-                        <div className="w-full lg:w-1/2">
-                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Cutting-Edge Web3 Stack</h2>
-                            <p className="text-neutral-tan mb-8 leading-relaxed text-sm md:text-base">
-                                Carrot in a Box isn't just a game; it's a demonstration of state-of-the-art cryptography.
-                                By leveraging **Fhenix's coFHE**, we enable gameplay possibilities that were previously impossible
-                                on transparent blockchains.
-                            </p>
-                            <div className="flex flex-wrap gap-2 md:gap-3">
-                                <TechPill label="Fhenix FHEVM" />
-                                <TechPill label="coFHE Oracle" />
-                                <TechPill label="Encrypted State" />
-                                <TechPill label="Zero Leakage" />
+                    {/* Tech Specs Section */}
+                    <div className="py-8 md:py-12 border-t border-white/5">
+                        <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+                            <div className="w-full lg:w-1/2">
+                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Cutting-Edge Web3 Stack</h2>
+                                <p className="text-neutral-tan mb-8 leading-relaxed text-sm md:text-base">
+                                    Carrot in a Box isn't just a game; it's a demonstration of state-of-the-art cryptography.
+                                    By leveraging **Fhenix's coFHE**, we enable gameplay possibilities that were previously impossible
+                                    on transparent blockchains.
+                                </p>
+                                <div className="flex flex-wrap gap-2 md:gap-3">
+                                    <TechPill label="Fhenix FHEVM" />
+                                    <TechPill label="coFHE Oracle" />
+                                    <TechPill label="Encrypted State" />
+                                    <TechPill label="Zero Leakage" />
+                                </div>
+                            </div>
+                            <div className="w-full lg:w-1/2 grid grid-cols-2 gap-3 md:gap-4">
+                                <StatBox label="Network" value="Sepolia" />
+                                <StatBox label="Protocol" value="Fhenix coFHE" />
+                                <StatBox label="Security" value="Homomorphic" />
+                                <StatBox label="Speed" value="Instant" />
                             </div>
                         </div>
-                        <div className="w-full lg:w-1/2 grid grid-cols-2 gap-3 md:gap-4">
-                            <StatBox label="Network" value="Sepolia" />
-                            <StatBox label="Protocol" value="Fhenix coFHE" />
-                            <StatBox label="Security" value="Homomorphic" />
-                            <StatBox label="Speed" value="Instant" />
-                        </div>
                     </div>
-                </div>
             </section>
 
             {/* Footer */}
@@ -345,6 +347,48 @@ function StatBox({ label, value }: { label: string, value: string }) {
         <div className="glass-luxe p-6 rounded-2xl border border-white/5">
             <p className="text-[10px] text-neutral-tan/50 uppercase tracking-[2px] mb-1">{label}</p>
             <p className="text-xl font-bold text-white tracking-tight italic">{value}</p>
+        </div>
+    );
+}
+
+function BubbleDivider() {
+    return (
+        <div className="relative h-20 w-full overflow-hidden">
+            {/* Wavy Border SVG */}
+            <svg
+                viewBox="0 0 1440 120"
+                className="absolute bottom-0 left-0 w-full h-[60px] fill-surface-1"
+                preserveAspectRatio="none"
+            >
+                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" />
+            </svg>
+
+            {/* Bubble Stream */}
+            <div className="absolute inset-0 z-0">
+                {[...Array(15)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{
+                            x: Math.random() * 100 + "%",
+                            y: 100,
+                            opacity: 0,
+                            scale: Math.random() * 0.5 + 0.5
+                        }}
+                        animate={{
+                            y: -20,
+                            opacity: [0, 0.4, 0],
+                            x: (Math.random() * 100 - 50) + "%"
+                        }}
+                        transition={{
+                            duration: Math.random() * 3 + 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 5,
+                            ease: "easeOut"
+                        }}
+                        className="absolute w-2 h-2 rounded-full bg-primary/20 blur-[1px]"
+                    />
+                ))}
+            </div>
         </div>
     );
 }
