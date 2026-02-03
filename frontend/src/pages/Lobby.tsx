@@ -267,7 +267,7 @@ function Lobby() {
                         <button
                             onClick={handleClaim}
                             disabled={!canClaim || isTxPending || isLoadingMintTime || !isConnected}
-                            className={`px-3 py-1.5 text-[10px] rounded-lg font-bold transition-all ${canClaim && !isTxPending ? 'btn-secondary shadow-glow-sm' : 'bg-white/5 text-white/30 border border-white/10 cursor-not-allowed'}`}
+                            className={`px-3 py-1.5 text-[10px] rounded-lg font-bold transition-all ${canClaim && !isTxPending ? 'btn-secondary' : 'bg-white/5 text-white/30 border border-white/10 cursor-not-allowed'}`}
                         >
                             {isTxPending || isLoadingMintTime ? '...' : canClaim ? 'CLAIM' : 'CLAIMED'}
                         </button>
@@ -292,7 +292,7 @@ function Lobby() {
             {/* Main Content Area - 3-Tab System */}
             <div className="space-y-6">
                 {/* Tab Switcher */}
-                <div className="flex p-1 bg-black/40 rounded-2xl border border-white/5 w-full md:max-w-2xl mx-auto backdrop-blur-xl">
+                <div className="flex p-1 bg-surface-2 rounded-2xl border border-white/5 w-full md:max-w-2xl mx-auto">
                     <TabButton
                         active={activeTab === 'available'}
                         onClick={() => setActiveTab('available')}
@@ -486,7 +486,7 @@ function StatsCard({ title, value, subtitle, unit, icon, imageIcon, statusColor 
                 <div className="flex flex-col items-end gap-3">
                     <div className="w-10 h-10 rounded-xl bg-[var(--color-border-dark)] flex items-center justify-center overflow-hidden border border-white/5">
                         {imageIcon ? (
-                            <img src={imageIcon} alt="Stat" className="w-7 h-7 object-contain mix-blend-screen drop-shadow-[0_0_8px_rgba(242,127,13,0.3)]" />
+                            <img src={imageIcon} alt="Stat" className="w-7 h-7 object-contain" />
                         ) : icon && (
                             <Icon name={icon} size="md" className="text-[var(--color-primary)]" />
                         )}
@@ -585,8 +585,8 @@ function MyGameCard({ game, userAddress }: MyGameCardProps) {
             </div>
 
             <div className="flex items-center gap-4 mb-4 bg-black/20 p-3 rounded-2xl border border-white/5">
-                <div className="w-12 h-12 rounded-xl overflow-hidden border border-primary/30 shadow-glow bg-black">
-                    <img src={isPlayerA ? "/assets/player_a.png" : "/assets/player_b.png"} alt="Avatar" className="w-full h-full object-cover mix-blend-screen" />
+                <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/10 bg-black">
+                    <img src={isPlayerA ? "/assets/player_a.png" : "/assets/player_b.png"} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
                 <div>
                     <p className="text-[10px] text-neutral-tan uppercase font-black tracking-widest">Role</p>
@@ -732,7 +732,7 @@ function GameCard({ game }: GameCardProps) {
                 </span>
                 <div className="flex items-center gap-2">
                     <div className="w-6 h-6 rounded-md overflow-hidden border border-white/10 bg-black">
-                        <img src="/assets/player_a.png" alt="Creator" className="w-full h-full object-cover mix-blend-screen" />
+                        <img src="/assets/player_a.png" alt="Creator" className="w-full h-full object-cover" />
                     </div>
                     <span className="text-xs text-[var(--color-neutral-tan)] font-mono">{game.creator.slice(0, 6)}...{game.creator.slice(-4)}</span>
                 </div>

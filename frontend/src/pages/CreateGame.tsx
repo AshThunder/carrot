@@ -245,7 +245,7 @@ function CreateGame() {
                                         placeholder="0.00"
                                     />
                                     <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                                        <img src="/assets/carrot.png" alt="Carrot" className="w-5 h-5 md:w-6 md:h-6 object-contain mix-blend-screen drop-shadow-[0_0_5px_rgba(242,127,13,0.4)]" />
+                                        <img src="/assets/carrot.png" alt="Carrot" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                                         <span className="text-xs md:text-sm text-neutral-tan font-bold">CARROT</span>
                                     </div>
                                 </div>
@@ -317,7 +317,7 @@ function CreateGame() {
                         <div className="mt-8 lg:mt-0 space-y-4">
                             <button
                                 onClick={handleCreateGame}
-                                className="btn-primary w-full py-5 md:py-6 text-lg md:text-xl flex items-center justify-center gap-3 uppercase tracking-wider font-black shadow-glow-lg active:scale-[0.98]"
+                                className="btn-primary w-full py-5 md:py-6 text-lg md:text-xl flex items-center justify-center gap-3 uppercase tracking-wider font-black active:scale-[0.98]"
                             >
                                 <Icon name="lock" size="sm" filled className="text-black" />
                                 Lock In & Create
@@ -453,7 +453,7 @@ function ChoiceCard({ hasCarrot, onShuffle }: ChoiceCardProps) {
         <motion.div
             initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
-            className="cursor-pointer p-8 rounded-3xl flex flex-col items-center justify-center min-h-[350px] transition-all relative overflow-hidden bg-[var(--color-background-card)] border-2 border-primary shadow-[0_0_60px_rgba(242,127,13,0.1)] bg-gradient-to-t from-primary/10 to-transparent"
+            className="cursor-pointer p-8 rounded-3xl flex flex-col items-center justify-center min-h-[350px] transition-all relative overflow-hidden bg-surface-2 border-2 border-primary"
         >
             <div className="absolute top-4 left-4 flex items-center gap-2 bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-primary/30">
                 MAKE A CHOICE
@@ -469,7 +469,7 @@ function ChoiceCard({ hasCarrot, onShuffle }: ChoiceCardProps) {
                 >
                     {hasCarrot ? (
                         <div className="flex flex-col items-center justify-center">
-                            <img src="/assets/carrot.png" alt="Carrot" className="w-32 h-32 object-contain drop-shadow-[0_0_25px_rgba(242,127,13,0.5)] mix-blend-screen" />
+                            <img src="/assets/carrot.png" alt="Carrot" className="w-32 h-32 object-contain" />
                             <div className="mt-8 text-primary font-black uppercase text-sm tracking-[0.3em] text-center">
                                 Carrot Inside
                             </div>

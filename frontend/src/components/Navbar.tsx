@@ -29,22 +29,21 @@ function Navbar() {
     };
 
     return (
-        <nav className="bg-[var(--color-surface-2)] border-b border-[var(--color-border-dark)] sticky top-0 z-50 backdrop-blur-xl">
+        <nav className="bg-surface-2 border-b border-border-dark sticky top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo / Branding */}
                     <Link to="/" className="flex items-center gap-3 group py-1.5 focus:outline-none">
                         <motion.div
-                            className="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl flex items-center justify-center border border-primary/30 relative overflow-hidden flex-shrink-0"
+                            className="w-10 h-10 md:w-11 md:h-11 bg-surface-3 rounded-xl flex items-center justify-center border border-white/10 relative overflow-hidden flex-shrink-0"
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
                             <img
                                 src="/assets/carrot.png"
                                 alt="Carrot"
-                                className="w-6 h-6 md:w-7 md:h-7 object-contain drop-shadow-[0_0_12px_rgba(242,127,13,0.6)]"
+                                className="w-6 h-6 md:w-7 md:h-7 object-contain"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
                         </motion.div>
 
                         <div className="flex flex-col">

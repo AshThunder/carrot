@@ -56,7 +56,7 @@ function ProcessingUI({ progress, syncLogs }: { progress?: ProgressState, syncLo
     const percent = Math.min(100, Math.max(10, currentStep * 25));
 
     return (
-        <div className="max-w-md mx-auto glass-card border-[1px] border-vault-purple/50 p-6 md:p-8 flex flex-col items-center bg-[#1a1425]/90">
+        <div className="max-w-md mx-auto glass-card border-[1px] border-white/10 p-6 md:p-8 flex flex-col items-center bg-surface-2">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4 md:mb-6 relative">
                 <div className="absolute inset-0 rounded-full border-2 border-primary border-t-transparent animate-spin"></div>
                 <Icon name="lock" size="md" className="text-primary" filled />
@@ -150,8 +150,8 @@ function SuccessUI({ gameId, stake = 1, onClose }: { gameId?: string, stake?: nu
     };
 
     return (
-        <div className="max-w-xl mx-auto glass-card p-6 md:p-12 flex flex-col items-center bg-[#1a1612]/95 border-primary/20">
-            <div className="w-20 h-20 md:w-32 md:h-32 bg-primary/10 rounded-2xl md:rounded-3xl border-2 border-primary/20 flex items-center justify-center mb-6 md:mb-8 shadow-[0_0_50px_rgba(242,127,13,0.15)]">
+        <div className="max-w-xl mx-auto glass-card p-6 md:p-12 flex flex-col items-center bg-surface-2 border-white/10">
+            <div className="w-20 h-20 md:w-32 md:h-32 bg-surface-3 rounded-2xl md:rounded-3xl border-2 border-white/10 flex items-center justify-center mb-6 md:mb-8">
                 <Icon name="inventory_2" key="box-icon" className="text-primary text-4xl md:text-6xl" filled />
             </div>
 
@@ -203,7 +203,7 @@ function SuccessUI({ gameId, stake = 1, onClose }: { gameId?: string, stake?: nu
                         onClose();
                         if (gameId) navigate(`/game/${gameId}`);
                     }}
-                    className="btn-primary w-full py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest shadow-glow-lg"
+                    className="btn-primary w-full py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest"
                 >
                     Go to Game Room
                 </button>
@@ -227,7 +227,7 @@ function FailureUI({ error = "Something went wrong", onRetry, onClose }: { error
     const isBalanceError = error.toLowerCase().includes('balance');
 
     return (
-        <div className="max-w-md mx-auto glass-card p-6 md:p-10 flex flex-col items-center bg-[#1a0a0a]/95 border-red-500/20 shadow-[0_0_80px_rgba(239,68,68,0.1)]">
+        <div className="max-w-md mx-auto glass-card p-6 md:p-10 flex flex-col items-center bg-surface-2 border-red-500/20">
             <div className="w-16 h-16 md:w-20 md:h-20 bg-red-500/10 rounded-full border-2 border-red-500/20 flex items-center justify-center mb-6 md:mb-8 relative">
                 <div className="absolute inset-0 rounded-full bg-red-500/5 animate-pulse" />
                 <Icon name="history" size="md" className="text-red-500 relative z-10" />
@@ -256,7 +256,7 @@ function FailureUI({ error = "Something went wrong", onRetry, onClose }: { error
                     <Link
                         to="/lobby"
                         onClick={onClose}
-                        className="w-full bg-primary text-black font-black uppercase py-4 rounded-full flex items-center justify-center gap-2 tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-glow text-xs"
+                        className="w-full bg-primary text-black font-black uppercase py-4 rounded-full flex items-center justify-center gap-2 tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] text-xs"
                     >
                         <Icon name="faucet" size="sm" filled />
                         Go to Faucet

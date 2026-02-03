@@ -429,16 +429,16 @@ function Game() {
             </div>
 
             {/* Game Stage */}
-            <div className="glass-card p-4 md:p-8 border-white/5 bg-gradient-to-t from-primary/5 to-transparent">
+            <div className="glass-card p-4 md:p-8 border-white/5 bg-surface-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto">
                     {/* Box A */}
-                    <motion.div className={`glass-luxe p-6 md:p-8 flex flex-col items-center justify-center min-h-[240px] md:min-h-[300px] border-2 rounded-3xl relative transition-all ${isPlayerA ? 'border-primary shadow-glow-sm' : 'border-white/5 opacity-80'}`}>
+                    <motion.div className={`glass-card p-6 md:p-8 flex flex-col items-center justify-center min-h-[240px] md:min-h-[300px] border-2 rounded-3xl relative transition-all ${isPlayerA ? 'border-primary' : 'border-white/5 opacity-80'}`}>
                         <p className="absolute top-4 text-[9px] font-black text-neutral-tan/50 uppercase tracking-[0.3em]">BOX A</p>
                         <div className="relative mb-5 md:mb-6">
                             <div className="w-20 h-20 md:w-24 md:h-24 bg-background-card rounded-2xl md:rounded-3xl overflow-hidden flex items-center justify-center border border-white/10 shadow-glow bg-black/40">
                                 {(game.state === GameStateIdx.Resolved && game.playerAHasCarrotRevealed) || (isPlayerA && showPeek && creatorCarrotPeek) ? (
                                     <div className="relative flex flex-col items-center justify-center p-2">
-                                        <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce mix-blend-screen" />
+                                        <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce" />
                                         {game.state !== GameStateIdx.Resolved && (
                                             <span className="absolute -bottom-1 text-[8px] font-black text-primary uppercase tracking-[0.2em] animate-pulse bg-black/80 px-2 py-0.5 rounded-full whitespace-nowrap">
                                                 CARROT INSIDE
@@ -456,7 +456,7 @@ function Game() {
                                             </div>
                                         ) : (
                                             <>
-                                                <img src="/assets/player_a.png" alt="Creator" className="w-full h-full object-cover group-hover:scale-110 transition-transform mix-blend-screen" />
+                                                <img src="/assets/player_a.png" alt="Creator" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                                                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                                     <Icon name="lock" size="sm" className="text-primary" />
                                                 </div>
@@ -482,15 +482,15 @@ function Game() {
                     </motion.div>
 
                     {/* Box B */}
-                    <motion.div className={`glass-luxe p-6 md:p-8 flex flex-col items-center justify-center min-h-[240px] md:min-h-[300px] border-2 rounded-3xl relative transition-all ${isPlayerB ? 'border-primary shadow-glow-sm' : 'border-white/5 opacity-80'}`}>
+                    <motion.div className={`glass-card p-6 md:p-8 flex flex-col items-center justify-center min-h-[240px] md:min-h-[300px] border-2 rounded-3xl relative transition-all ${isPlayerB ? 'border-primary' : 'border-white/5 opacity-80'}`}>
                         <p className="absolute top-4 text-[9px] font-black text-neutral-tan/50 uppercase tracking-[0.3em]">BOX B</p>
                         <div className="relative mb-5 md:mb-6">
-                            <div className="w-20 h-20 md:w-24 md:h-24 bg-background-card rounded-2xl md:rounded-3xl overflow-hidden flex items-center justify-center border border-white/10 shadow-glow bg-black/40">
+                            <div className="w-20 h-20 md:w-24 md:h-24 bg-surface-3 rounded-2xl md:rounded-3xl overflow-hidden flex items-center justify-center border border-white/10 bg-black/40">
                                 {game.state === GameStateIdx.Resolved && !game.playerAHasCarrotRevealed ? (
-                                    <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce mix-blend-screen" />
+                                    <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce" />
                                 ) : (
                                     <div className="flex flex-col items-center justify-center group h-full w-full relative">
-                                        <img src="/assets/player_b.png" alt="Challenger" className="w-full h-full object-cover group-hover:scale-110 transition-transform mix-blend-screen" />
+                                        <img src="/assets/player_b.png" alt="Challenger" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                             <Icon name="lock" size="sm" className="text-primary" />
                                         </div>
@@ -507,7 +507,7 @@ function Game() {
             {/* Decision Buttons - Above Chat for priority */}
             {game.state === GameStateIdx.Active && isPlayerB && !isExpired && (
                 <div className="flex flex-col xs:flex-row gap-3 md:gap-4 w-full max-w-xl mx-auto mb-2">
-                    <button onClick={() => handleDecision(true)} disabled={isProcessing} className="btn-primary flex-1 py-4 md:py-5 text-base md:text-lg font-black tracking-widest uppercase shadow-glow-lg">SWAP BOXES</button>
+                    <button onClick={() => handleDecision(true)} disabled={isProcessing} className="btn-primary flex-1 py-4 md:py-5 text-base md:text-lg font-black tracking-widest uppercase">SWAP BOXES</button>
                     <button onClick={() => handleDecision(false)} disabled={isProcessing} className="btn-secondary flex-1 py-4 md:py-5 text-base md:text-lg font-black tracking-widest uppercase">KEEP MY BOX</button>
                 </div>
             )}
@@ -605,7 +605,7 @@ function Game() {
                 {game.state === GameStateIdx.Open && !isPlayerA && (
                     <div className="w-full flex flex-col items-center gap-3">
                         <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
-                            <img src="/assets/carrot.png" alt="Carrot" className="w-4 h-4 object-contain mix-blend-screen" />
+                            <img src="/assets/carrot.png" alt="Carrot" className="w-4 h-4 object-contain" />
                             <span className="text-[10px] text-neutral-tan uppercase font-black tracking-widest">Your Balance:</span>
                             <span className={`text-xs font-bold ${userBalance !== undefined && game && (userBalance as bigint) < game.stake ? 'text-red-400' : 'text-primary'}`}>
                                 {userBalance !== undefined ? Number(formatEther(userBalance as bigint)).toLocaleString() : '---'} CARROT
@@ -681,7 +681,7 @@ function Game() {
                             onClick={handleFinalize}
                             disabled={isProcessing || !decryptionReady}
                             className={`px-10 py-4 text-lg font-black tracking-widest uppercase transition-all ${decryptionReady
-                                ? 'btn-primary shadow-glow hover:scale-105 active:scale-95'
+                                ? 'btn-primary hover:scale-105 active:scale-95'
                                 : 'bg-white/5 text-white/20 border border-white/10 cursor-not-allowed'
                                 }`}
                         >

@@ -76,7 +76,7 @@ function GameResult() {
                     transition={{ delay: 0.4 }}
                     className="mt-4 md:mt-6"
                 >
-                    <h1 className={`text-4xl md:text-6xl font-black italic uppercase tracking-tighter ${isWinner ? 'text-success shadow-glow-sm' : 'text-red-500'}`}>
+                    <h1 className={`text-4xl md:text-6xl font-black italic uppercase tracking-tighter ${isWinner ? 'text-success' : 'text-red-500'}`}>
                         {isWinner ? 'WINNER!' : 'YOU LOST'}
                     </h1>
                     <p className="text-neutral-tan text-sm md:text-base mt-2 max-w-md mx-auto leading-relaxed">
@@ -95,10 +95,10 @@ function GameResult() {
                 className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-6"
             >
                 {/* Box A */}
-                <div className={`glass-luxe p-5 md:p-6 flex flex-col items-center border border-white/5 relative overflow-hidden rounded-[240px] md:rounded-[32px] ${carrotInA ? 'border-success shadow-glow-success bg-success/5' : 'opacity-30'}`}>
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-black/40 rounded-2xl md:rounded-3xl flex items-center justify-center border border-white/10 mb-4 overflow-hidden shadow-inner">
+                <div className={`glass-card p-5 md:p-6 flex flex-col items-center border border-white/5 relative overflow-hidden rounded-[24px] md:rounded-[32px] ${carrotInA ? 'border-success bg-success/5' : 'opacity-30'}`}>
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-surface-3 rounded-2xl md:rounded-3xl flex items-center justify-center border border-white/10 mb-4 overflow-hidden">
                         {carrotInA ? (
-                            <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce mix-blend-screen" />
+                            <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce" />
                         ) : (
                             <Icon name="inventory_2" size="lg" className="text-white/10" />
                         )}
@@ -108,14 +108,14 @@ function GameResult() {
                 </div>
 
                 {/* Box B */}
-                <div className={`glass-luxe p-5 md:p-6 flex flex-col items-center border border-white/5 relative overflow-hidden rounded-[24px] md:rounded-[32px] ${carrotInB ? 'border-success shadow-glow-success bg-success/5' : 'opacity-30'}`}>
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-black/40 rounded-2xl md:rounded-3xl flex items-center justify-center border border-white/10 mb-4 overflow-hidden shadow-inner">
+                <div className={`glass-card p-5 md:p-6 flex flex-col items-center border border-white/5 relative overflow-hidden rounded-[24px] md:rounded-[32px] ${carrotInB ? 'border-success bg-success/5' : 'opacity-30'}`}>
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-surface-3 rounded-2xl md:rounded-3xl flex items-center justify-center border border-white/10 mb-4 overflow-hidden">
                         {carrotInB ? (
                             <motion.div
                                 animate={{ rotate: [0, -10, 10, 0] }}
                                 transition={{ duration: 1, repeat: Infinity }}
                             >
-                                <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain mix-blend-screen" />
+                                <img src="/assets/carrot.png" alt="Carrot" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
                             </motion.div>
                         ) : (
                             <Icon name="inventory_2" size="lg" className="text-white/10" />
